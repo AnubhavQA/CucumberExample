@@ -1,12 +1,11 @@
-target/
 *.class
 .project
 .metadata
-tmp/**
-tmp/**/*
+target/
+tmp/
 *.tmp
 *.bak
-*.swp
+*.sw?
 local.properties
 .classpath
 .settings/
