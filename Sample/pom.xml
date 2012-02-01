@@ -8,90 +8,35 @@
 	<packaging>jar</packaging>
 
 	<name>Sample</name>
-	<url>http://maven.apache.org</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<cucumber.version>1.0.0.RC11</cucumber.version>
 	</properties>
 
-	<repositories>
-		<repository>
-			<id>selenium-repository</id>
-			<url>http://selenium.googlecode.com/svn/repository/</url>
-		</repository>
-		<repository>
-			<id>codehaus</id>
-			<url>http://repository.codehaus.org</url>
-		</repository>
-		<repository>
-			<id>cukes</id>
-			<url>http://cukes.info/maven</url>
-		</repository>
-	</repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>cukes</id>
-            <url>http://cukes.info/maven</url>
-        </pluginRepository>
-    </pluginRepositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
+			<artifactId>selenium-firefox-driver</artifactId>
 			<version>2.12.0</version>
-		</dependency>
-		<dependency>
-			<groupId>cuke4duke</groupId>
-			<artifactId>cuke4duke</artifactId>
-			<version>0.4.3</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-picocontainer</artifactId>
-			<version>1.0.0.RC4</version>
-			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-junit</artifactId>
-			<version>1.0.0.RC4</version>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.picocontainer</groupId>
-			<artifactId>picocontainer</artifactId>
-			<version>2.0</version>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.8.1</version>
+			<version>4.10</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>cuke4duke</groupId>
-				<artifactId>cuke4duke-maven-plugin</artifactId>
-				<version>0.4.4</version>
-				<configuration>
-					 <jvmArgs>
-						<jvmArg>
-							-Dcuke4duke.objectFactory=cuke4duke.internal.jvmclass.PicoFactory
-      </jvmArg>
-						<jvmArg>-Dfile.encoding=UTF-8</jvmArg>
-					</jvmArgs>
-					<cucumberArgs>
-						<cucumberArg>--require ${basedir}/target/test-classes</cucumberArg>
-					</cucumberArgs>  
-					<gems>
-						<gem>install cuke4duke --version 0.4.3</gem>
-					</gems>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>
