@@ -1,0 +1,15 @@
+target/
+*.class
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+local.properties
+.classpath
+.settings/
+.loadpath
+.externalToolBuilders/
+*.launch
