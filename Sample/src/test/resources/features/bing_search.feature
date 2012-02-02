@@ -5,6 +5,6 @@ Feature: To search for QAI
 
 	Scenario: Search for QAInfotech
 		Given I am on Bings's home page
-		When I enter the keyword "QA Infotech"
+		When I enter the keyword "QA Infotec"
 		And click the Submit button
 		Then the page title should be "QA Infotech - Bing"

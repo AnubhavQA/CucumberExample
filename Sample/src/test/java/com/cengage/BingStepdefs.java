@@ -28,7 +28,6 @@ public class BingStepdefs  {
 
 	@Given("^I am on Bings's home page$")
 	public void iAmOnBingsHomePage() {
-		System.out.println("I am on Bings home page");
 		driver.get("http://www.bing.com");
 	}
 
