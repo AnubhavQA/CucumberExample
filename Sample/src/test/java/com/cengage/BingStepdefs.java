@@ -1,4 +1,5 @@
 package com.cengage;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ public class BingStepdefs  {
 	private WebElement element;
 
 	public BingStepdefs() {
-		this.driver = (WebDriver) new FirefoxDriver();
+		this.driver = new FirefoxDriver();
 	}
 
 	@Given("^I am on Bings's home page$")
@@ -31,6 +32,7 @@ public class BingStepdefs  {
 	@When("^click the Submit button$")
 	public void clickTheSubmitButton() {
 		element.submit();
+		driver.close();
 	}
 
 	@Then("^the page title should be \"(.*)\"$")
