@@ -9,6 +9,7 @@
 	</organization>
 	<properties>
 		<cucumber.version>1.0.0.RC11</cucumber.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<inceptionYear>2012</inceptionYear>
 	<dependencies>
