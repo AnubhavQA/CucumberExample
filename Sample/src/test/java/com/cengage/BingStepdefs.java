@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.annotation.After;
+import cucumber.annotation.Before;
 import cucumber.annotation.en.Given;
 import cucumber.annotation.en.Then;
 import cucumber.annotation.en.When;
@@ -13,13 +16,18 @@ public class BingStepdefs  {
 	private WebDriver driver;
 	private WebElement element;
 
-	public BingStepdefs() {
-		this.driver = new FirefoxDriver();
+	@Before
+	public void setUp() {
+		driver = new FirefoxDriver();
+	}
+
+	@After
+	public void tearDown() {
+		driver.close();
 	}
 
 	@Given("^I am on Bings's home page$")
 	public void iAmOnBingsHomePage() {
-		System.out.println("I am on Bings home page");
 		driver.get("http://www.bing.com");
 	}
 
@@ -32,7 +40,6 @@ public class BingStepdefs  {
 	@When("^click the Submit button$")
 	public void clickTheSubmitButton() {
 		element.submit();
-		driver.close();
 	}
 
 	@Then("^the page title should be \"(.*)\"$")
